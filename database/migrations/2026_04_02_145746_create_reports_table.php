@@ -18,14 +18,29 @@ class CreateReportsTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->date('report_date');
             $table->string('report_type');
-            $table->string('visit_context')->nullable();
             $table->string('status');
             //location
             $table->string('area');
             $table->string('specific_location')->nullable();
-            
+            //contact
+            $table->string('contact_name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('contact_method')->nullable();
+            $table->string('visit_context')->nullable();
+            //interaction
+            $table->string('intraction_result')->nullable();
+            $table->string('intrest_level')->nullable();
+            //follow-up
+            $table->string('commitment')->nullable();
+            $table->string('next_action')->nullable();
+            $table->string('next_follow_up_date')->nullable();
+            $table->string('related_report_id')->nullable();
+            //additionals
+            $table->string('description')->nullable();
+            $table->string('remark')->nullable();
 
-
+            $table->string('next_follow_up_date')->nullable();
+            $table->string('related_report_id')->nullable();
 
             $table->timestamps();
         });
